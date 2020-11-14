@@ -1,0 +1,47 @@
+/*Global*/
+
+body {
+    text-align: center;
+}
+
+/*Helpers*/
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*Header*/
+
+.header_img img {
+    width: 7%;
+    height: 7%;
+    display: block;
+}
+
+#form {
+    padding: 0 0 0 0;
+}
+
+#search_buttom {
+    background-color: #B8BEDD;
+    border-style: none;
+    padding: 6px 12px 6px 12px;
+    border-radius: 4px;
+}
+
+#search_buttom:hover {
+    background-color: #919ACA;
+}
+
+#load_more {
+    background-color: #EFC3E6;
+    border-style: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 4px;
+}
+
+#load_more:hover {
+    background-color: #E59ED7;
+}
