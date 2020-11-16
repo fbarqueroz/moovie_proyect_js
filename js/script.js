@@ -10,10 +10,7 @@ function addMovies(movies) {
     let listItem = document.createElement ('li');
     movieList.appendChild(listItem);
     window.scroll(0,0);
-
-    //Poster
     
-
   // Movie title
     let title = document.createElement ('h2');
     title.innerHTML = movies[i].Title;
