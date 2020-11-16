@@ -6,41 +6,44 @@ function addMovies(movies) {
   const movieList = document.getElementById ('movie_list');
   movie_list.innerHTML = '';
 
+  const tooltip = document.getElementById ('tooltip') 
+
   for (let i = 0; movies.length; i += 1) {
     let listItem = document.createElement ('li');
     movieList.appendChild(listItem);
-    window.scroll(0,0);
+
+    let tooltip_content = document.createElement ('div');
+    tooltip.appendChild(tooltip_content);
 
     //Poster
     let poster = document.createElement ('img');
     poster.setAttribute ('src', movies[i].Poster);
     listItem.appendChild (poster);
 
-
-  // Movie title
+    /*// Movie title
     let title = document.createElement ('h2');
     title.innerHTML = movies[i].Title;
-    listItem.appendChild (title);
-
+    tooltip.appendChild (title);
+  
     // Movie year
     let movieYear = document.createElement ('h3');
     movieYear.innerHTML = movies[i].Year;
-    listItem.appendChild (movieYear);
+    tooltip.appendChild (movieYear);
     
     // Runtime
     const runtime = document.createElement ('h4');
     runtime.innerHTML = movies[i].Runtime;
-    listItem.appendChild (runtime);
+    tooltip_content.appendChild (runtime);
 
     // Movie Actors
     const actors = document.createElement ('p');
     actors.innerHTML = movies[i].Actors;
-    listItem.appendChild (actors);
+    tooltip_content.appendChild (actors);
 
     //Metascore
     const metascore = document.createElement ('p');
     metascore.innerHTML = movies[i].Metascore;
-    listItem.appendChild (metascore);
+    tooltip_content.appendChild (metascore);*/
   }
 };
 
@@ -76,3 +79,11 @@ loadMore.addEventListener ('click', (event) => {
     });
 });
 
+fetch(`http://www.omdbapi.com/?apikey=4f567dc7&i=${searching}&page=${count}`)
+.then((response) => response.json())
+.then((data) => {
+  addMovies (data.Search);
+  addMovies (data.Runtime);
+  addMovies (data.Actors);
+  addMovies (data.Metascore);
+});
