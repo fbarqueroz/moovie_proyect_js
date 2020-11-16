@@ -10,6 +10,11 @@ h1 {
 
 body {
     background-color: #F1F2F8;
+    font-family: 'Comfortaa', cursive;
+}
+
+li {
+    list-style: none;
 }
 
 /*Helpers*/
@@ -54,6 +59,10 @@ body {
     background-color: #919ACA;
 }
 
+#search_buttom:active {
+    background-color: #495697;
+}
+
 #load_more {
     background-color: #EFC3E6;
     border-style: none;
@@ -64,4 +73,8 @@ body {
 
 #load_more:hover {
     background-color: #E59ED7;
+}
+
+#load_more:active {
+    background-color: #E15197;
 }

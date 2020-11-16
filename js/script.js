@@ -10,7 +10,13 @@ function addMovies(movies) {
     let listItem = document.createElement ('li');
     movieList.appendChild(listItem);
     window.scroll(0,0);
-    
+
+    //Poster
+    let poster = document.createElement ('img');
+    poster.setAttribute ('src', movies[i].Poster);
+    listItem.appendChild (poster);
+
+
   // Movie title
     let title = document.createElement ('h2');
     title.innerHTML = movies[i].Title;
@@ -42,7 +48,6 @@ const movie_form = document.getElementById ('form');
 movie_form.addEventListener ('submit',(event) => {
   event.preventDefault();
   const movie_search = movie_form.elements[0].value;
-  console.log (movie_search);
 
     // Fetch
   fetch(`http://www.omdbapi.com/?apikey=4f567dc7&s=${movie_search}`)
@@ -58,15 +63,16 @@ const nextPage = '';
 let count = 1;
 const loadMore = document.getElementById ('load_more');
 
-// http://www.omdbapi.com/?i=tt3896198&apikey=4f567dc7 --> 
+// http://www.omdbapi.com/?i=tt3896198&apikey=4f567dc7 --> original link (guardians of galaxy Vol.2) 
 
 loadMore.addEventListener ('click', (event) => {
   event.preventDefault ();
-  const save_search = search.element[0].value;
-  fetch(`http://www.omdbapi.com/?apikey=4f567dc7&s=${count}`)
+  const searching = search.element[0].value;
+  fetch(`http://www.omdbapi.com/?apikey=4f567dc7&s=${searching}&page=${count}`)
     .then((response) => response.json())
     .then((data) => {
       addMovies (data.Search);
+      count++;
     });
-})
+});
 
