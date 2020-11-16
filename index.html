@@ -8,17 +8,19 @@
     <title>Movie proyect JS</title>
 </head>
 <body>
-    <div class="header_img">
-        <img src="img/favicon.jpg" alt="Popcorn icon">
+    <div class="wrapper">
+        <div class="header_img">
+            <img src="img/favicon.jpg" alt="Popcorn icon">
+        </div>
+        <h1>Fabiruchis Movie Center</h1>
+        <form action="" id="form">
+            <input type="text" id="search" placeholder="Search movies">
+            <button type="submit" id="search_buttom">Search</button>
+        </form>
+        <ul id="movie_list" class="movie_list">
+            <!--Movies content goes here-->
+        </ul>
     </div>
-    <h1>Fabiruchis Movie Center</h1>
-    <form action="" id="form">
-        <input type="text" id="search" placeholder="Search movies">
-        <button type="submit" id="search_buttom">Search</button>
-    </form>
-    <ul id="movie_list" class="movie_list">
-        <!--Movies content goes here-->
-    </ul>
     <button id="load_more" class="load_more">Load More</button>
     <script src="js/script.js"></script>
 </body>
