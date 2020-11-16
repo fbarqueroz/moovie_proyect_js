@@ -6,14 +6,28 @@ function addMovies(movies) {
   const movieList = document.getElementById ('movie_list');
   movie_list.innerHTML = '';
 
-  const tooltip = document.getElementById ('tooltip') 
+  //const tooltip = document.getElementById ('tooltip') 
 
   for (let i = 0; movies.length; i += 1) {
     let listItem = document.createElement ('li');
     movieList.appendChild(listItem);
 
-    let tooltip_content = document.createElement ('div');
-    tooltip.appendChild(tooltip_content);
+    //Tooltip
+
+    const tooltip = `
+    <div class="tooltiptext">
+      <span>Title:${movies[i].Title}</span>
+      <br>
+      <span>Year:${movies[i].Year}</span>
+      <br>
+      <span>Runtime:${movies[i].Runtime}</span>
+      <br>
+      <span>Actors:${movies[i].Actors}</span>
+      <br>
+      <span>Metascore:${movies[i].Metascore}</span>
+    </div>
+    `;
+    listItem.innerHTML = tooltip;
 
     //Poster
     let poster = document.createElement ('img');
@@ -23,27 +37,27 @@ function addMovies(movies) {
     /*// Movie title
     let title = document.createElement ('h2');
     title.innerHTML = movies[i].Title;
-    tooltip.appendChild (title);
+    listItem.appendChild (title);
   
     // Movie year
     let movieYear = document.createElement ('h3');
     movieYear.innerHTML = movies[i].Year;
-    tooltip.appendChild (movieYear);
+    listItem.appendChild (movieYear);
     
     // Runtime
     const runtime = document.createElement ('h4');
     runtime.innerHTML = movies[i].Runtime;
-    tooltip_content.appendChild (runtime);
+    listItem.appendChild (runtime);
 
     // Movie Actors
     const actors = document.createElement ('p');
     actors.innerHTML = movies[i].Actors;
-    tooltip_content.appendChild (actors);
+    listItem.appendChild (actors);
 
     //Metascore
     const metascore = document.createElement ('p');
     metascore.innerHTML = movies[i].Metascore;
-    tooltip_content.appendChild (metascore);*/
+    listItem.appendChild (metascore);*/
   }
 };
 

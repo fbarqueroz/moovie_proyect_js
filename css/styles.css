@@ -33,6 +33,7 @@ img {
     padding-right: 65px;
     padding-top: 60px;
     height: 450px;
+    width: 380px;
     display: block;
     border-radius: 30px;
 }
@@ -106,17 +107,9 @@ img {
     background-color: #E15197;
 }
 
-/*Image*/
-
 /*Tooltip*/
 
-/*.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-}
-
-.tooltip .tooltiptext {
+.movie_list img .tooltiptext {
     visibility: hidden;
     width: 120px;
     background-color: #555;
@@ -133,7 +126,7 @@ img {
     transition: opacity 0.3s;
 }
 
-.tooltip .tooltiptext::after {
+.movie_list img .tooltiptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -144,6 +137,7 @@ img {
     border-color: #555 transparent transparent transparent;
 }
 
-.tooltip:hover .tooltiptext {
-
-}*/
+.movie_list img:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
