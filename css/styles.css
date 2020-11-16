@@ -23,24 +23,18 @@ img {
     padding-bottom: 10px;
 }
 
-.movie_list {
-    margin: 0 auto;
-}
+
 
 .movie_list img {
     margin: 0;
-    float: left;
-    padding-right: 65px;
-    padding-top: 60px;
-    height: 450px;
-    width: 380px;
     display: block;
     border-radius: 30px;
+    padding-top: 10px;
 }
 
-.movie_list img:hover {
-    visibility: visible;
-    opacity: 1;
+.movie_description {
+    font-family: 'Comfortaa', cursive;
+    color: #E59ED7;
 }
 
 /*Helpers*/
@@ -53,6 +47,20 @@ img {
 
 #form {
     padding-left: 20px;
+}
+
+#search {
+    background-color: #F0E6EF;
+    border: solid 1px #E59ED7;
+    border-radius: 3px;
+}
+
+#search:hover {
+    background-color: #E8D9E7;
+}
+
+#search:active {
+    background-color: #D9BFD7;
 }
 
 .wrapper {
@@ -105,39 +113,4 @@ img {
 
 #load_more:active {
     background-color: #E15197;
-}
-
-/*Tooltip*/
-
-.movie_list img .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.movie_list img .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-}
-
-.movie_list img:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
 }

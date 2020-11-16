@@ -14,27 +14,28 @@ function addMovies(movies) {
 
     //Tooltip
 
-    const tooltip = `
-    <div class="tooltiptext">
-      <span>Title:${movies[i].Title}</span>
+    const movie_description = `
+    <div class="movie_description">
+      <img src="${movies[i].Poster}" alt="movies.Title" class="clearfix">
+      <span>Title: ${movies[i].Title}</span>
       <br>
-      <span>Year:${movies[i].Year}</span>
+      <span>Year: ${movies[i].Year}</span>
       <br>
-      <span>Runtime:${movies[i].Runtime}</span>
+      <span>Runtime: ${movies[i].Runtime}</span>
       <br>
-      <span>Actors:${movies[i].Actors}</span>
+      <span>Actors: ${movies[i].Actors}</span>
       <br>
-      <span>Metascore:${movies[i].Metascore}</span>
+      <span>Metascore: ${movies[i].Metascore}</span>
     </div>
     `;
-    listItem.innerHTML = tooltip;
+    listItem.innerHTML = movie_description;
 
-    //Poster
+    /*//Poster
     let poster = document.createElement ('img');
-    poster.setAttribute ('src', movies[i].Poster);
+    poster.setAttribute ('src',movies[i].Poster);
     listItem.appendChild (poster);
 
-    /*// Movie title
+    // Movie title
     let title = document.createElement ('h2');
     title.innerHTML = movies[i].Title;
     listItem.appendChild (title);
