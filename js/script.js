@@ -2,6 +2,8 @@
 // Fabian Barquero's Movie proyect (API) 🎥
 //
 
+/* eslint-disable no-plusplus */
+
 function addMovies(movies) {
   const movieList = document.getElementById('movie_list');
   movieList.innerHTML = '';
@@ -15,7 +17,7 @@ function addMovies(movies) {
     fetch(`http://www.omdbapi.com/?apikey=4f567dc7&i=${movies[i].imdbID}`)
       .then((response) => response.json())
       .then((data) => {
-        const movie_description = `
+        const movieDescription = `
         <div class="movie_description">
           <img src="${movies[i].Poster}" alt="movies.Title" class="clearfix">
           <p>${movies[i].Title}</p>
@@ -27,43 +29,43 @@ function addMovies(movies) {
           <!--Modal-->
         </div>
           `;
-        listItem.innerHTML = movie_description;
-    });
+        listItem.innerHTML = movieDescription;
+      });
   }
 }
-const movie_form = document.getElementById('form');
-movie_form.addEventListener('submit', (event) => {
+const movieForm = document.getElementById('form');
+movieForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  const movie_search = movie_form.elements[0].value;
+  const movieSearch = movieForm.elements[0].value;
 
   // Fetch
-  fetch(`http://www.omdbapi.com/?apikey=4f567dc7&s=${movie_search}`)
+  fetch(`http://www.omdbapi.com/?apikey=4f567dc7&s=${movieSearch}`)
     .then((response) => response.json())
     .then((data) => {
       addMovies(data.Search);
     });
 });
 
-// Load More buttom
+// Load More button
 let count = 1;
 const loadMore = document.getElementById('load_more');
 // http://www.omdbapi.com/?i=tt3896198&apikey=4f567dc7 --> original link (guardians of galaxy Vol.2)
 loadMore.addEventListener('click', (event) => {
   event.preventDefault();
-  const searching = search.element[0].value;
-  count = count++;
-  fetch(`http://www.omdbapi.com/?apikey=4f567dc7&s=${searching}&page=${count}`)
+  const movieSearch = movieForm.elements[0].value;
+  count++;
+  fetch(`http://www.omdbapi.com/?apikey=4f567dc7&s=${movieSearch}&page=${count}`)
     .then((response) => response.json())
     .then((data) => {
       addMovies(data.Search);
     });
 
-  fetch(`http://www.omdbapi.com/?apikey=4f567dc7&i=${searching}&page=${count}`)
-  .then((response) => response.json())
-  .then((data) => {
-    addMovies(data.Search);
-    addMovies(data.Runtime);
-    addMovies(data.Actors);
-    addMovies(data.Metascore);
-  });
+  fetch(`http://www.omdbapi.com/?apikey=4f567dc7&i=${movieSearch}&page=${count}`)
+    .then((response) => response.json())
+    .then((data) => {
+      addMovies(data.Search);
+      addMovies(data.Runtime);
+      addMovies(data.Actors);
+      addMovies(data.Metascore);
+    });
 });
