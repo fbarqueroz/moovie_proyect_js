@@ -19,23 +19,8 @@
         </form>
         <ul id="movie_list" class="movie_list clearfix">
             <div class="movie_description">
-                <li><p>${movies[i].Title}</p></li>
-                <li><img src="${movies[i].Poster}" alt="movies.Title" class="clearfix"></li>
             <!--Movies content goes here-->
         </ul>
-    </div>
-    <!--Modal-->
-    <div class="modal">
-        <button id="myBtn">More Details</button>
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <li><p>Year: ${movies[i].Year}</p></li>
-                <li><p>Runtime: ${data.Runtime}</p></li>
-                <li><p>Actors: ${data.Actors}</p></li>
-                <li><p>Metascore: ${data.Metascore}</p></li>
-            </div>
-        </div>
     </div>
     <button id="load_more" class="load_more">Load More</button>
     <script src="js/script.js"></script>

@@ -19,50 +19,17 @@ function addMovies(movies) {
       .then((data) => {
         const movie_description = `
         <div class="movie_description">
-          <li><p>${movies[i].Title}</p></li>
-          <li><img src="${movies[i].Poster}" alt="movies.Title" class="clearfix"></li>
+          <img src="${movies[i].Poster}" alt="movies.Title" class="clearfix">
+          <p>${movies[i].Title}</p>
+          <p>Year: ${movies[i].Year}</p>
+          <p>Runtime: ${data.Runtime}</p>
+          <p>Actors: ${data.Actors}</p>
+          <p>Metascore: ${data.Metascore}</p>
+          <p>Plot: ${data.Plot}</p>
           <!--Modal-->
-          <div class="modal">
-          <button id="myBtn">More Details</button>
-              <div id="myModal" class="modal">
-                  <div class="modal-content">
-                      <span class="close">&times;</span>
-                      <li><p>Year: ${movies[i].Year}</p></li>
-                      <li><p>Runtime: ${data.Runtime}</p></li>
-                      <li><p>Actors: ${data.Actors}</p></li>
-                      <li><p>Metascore: ${data.Metascore}</p></li>
-                  </div>
-              </div>
-          </div>
         </div>
           `;
         listItem.innerHTML = movie_description;
-
-        // Get the modal
-        let modal = document.getElementById("myModal");
-
-        // Get the button that opens the modal
-        let btn = document.getElementById("myBtn");
-
-        // Get the <span> element that closes the modal
-        let span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks the button, open the modal 
-        btn.onclick = function() {
-          modal.style.display = "block";
-          }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-          modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
-        };
     });
 
     /*//Poster
